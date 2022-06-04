@@ -9,8 +9,8 @@ data class RaceInfo(
             .trim()
             .split(',')
             .filterNot { it.isEmpty() }
-            .map { it.trim() }
-        , rounds
+            .map { it.trim() },
+        rounds
     )
 
     init {

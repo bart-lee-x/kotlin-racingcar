@@ -19,4 +19,18 @@ class RaceSeriesTests {
         assertThat(result.first().raceResult.size).isEqualTo(racerNames.split(',').size)
     }
 
+    @Test
+    fun `raceSeries 는 winner()로 결과 합산 가능`() {
+        val raceRounds = 5
+        val racerNames = "abc, efg"
+        val raceInfo = RaceInfo(racerNames, raceRounds)
+
+        val raceSeries = RaceSeries(raceInfo)
+        val result = raceSeries.start()
+        val r2 = raceSeries.winner(result)
+
+        assertThat(result.size).isEqualTo(raceRounds)
+        assertThat(result.first().raceResult.size).isEqualTo(racerNames.split(',').size)
+    }
+
 }

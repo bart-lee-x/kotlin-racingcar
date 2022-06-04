@@ -1,5 +1,11 @@
 package racing.model
 
 data class RaceSeriesResult(
-    val winner: List<Car>
-)
+    val carStanding: List<CarPoint>,
+//    val winner: List<CarPoint>
+) {
+    data class CarPoint(
+        val car: Car,
+        val point: Int
+    )
+}
